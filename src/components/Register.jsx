@@ -67,13 +67,17 @@ export default function Register({ onSwitchToLogin }) {
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="mb-1 block text-xs font-medium text-slate-600">Campus (optional)</label>
+              <label className="mb-1 block text-xs font-medium text-slate-600">Campus</label>
               <select
+                required
                 value={campusName}
                 onChange={(e) => { setCampusName(e.target.value); setBatchName(""); }}
                 className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
               >
-                <option value="">-- Not scoped --</option>
+                {/* A campus is required: the API scopes every read to the
+                    account's campus and an account without one can't see any
+                    students, so "not scoped" would just 403 on every screen. */}
+                <option value="">-- Select a campus --</option>
                 {CAMPUSES.map((c) => <option key={c} value={c}>{c === NST_CAMPUS ? "Newton School of Technology" : c}</option>)}
               </select>
             </div>
