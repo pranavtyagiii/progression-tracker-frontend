@@ -34,13 +34,19 @@ export function AuthProvider({ children }) {
     setUser(user);
   }
 
+  async function register(data) {
+    const { token, user } = await api.register(data);
+    setToken(token);
+    setUser(user);
+  }
+
   function logout() {
     setToken(null);
     setUser(null);
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout, isAdmin: user?.role === "Admin" }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, isAdmin: user?.role === "Admin" }}>
       {children}
     </AuthContext.Provider>
   );

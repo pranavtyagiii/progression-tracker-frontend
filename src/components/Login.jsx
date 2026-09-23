@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../AuthContext";
 
-export default function Login() {
+export default function Login({ onSwitchToRegister }) {
   const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,7 +25,7 @@ export default function Login() {
       <div className="w-full max-w-sm rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
         <img src="/logo.png" alt="Newton School of Technology" className="mb-4 h-12 w-auto" />
         <h1 className="text-lg font-semibold text-slate-900">Progression Tracker</h1>
-        <p className="mt-1 text-sm text-slate-500">Log in with the account your Admin set up for you.</p>
+        <p className="mt-1 text-sm text-slate-500">Log in to your account.</p>
 
         <form onSubmit={handleSubmit} className="mt-4 space-y-3">
           <div>
@@ -52,8 +52,12 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="mt-4 text-[11px] leading-snug text-slate-400">
-          No account yet? Your Admin creates logins from the Team screen -- there's no self-signup.
+        <p className="mt-4 text-center text-[11px] leading-snug text-slate-400">
+          No account yet?{" "}
+          <button type="button" onClick={onSwitchToRegister} className="font-medium text-blue-700 hover:underline">
+            Register here
+          </button>
+          .
         </p>
       </div>
     </div>

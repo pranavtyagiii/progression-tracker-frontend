@@ -64,9 +64,9 @@ export default function UserManagement() {
         <UserCog size={20} /> Team
       </h1>
       <p className="mb-5 text-sm text-slate-500">
-        Add your PIs here. Each person logs in with their own email and password -- there's no self-signup, and no
-        "pick your name" shortcut anymore. Scoping someone to a campus and batch means their view (and their write
-        access, enforced by the server, not just hidden in the interface) is limited to just that batch.
+        Add PIs here, or they can register themselves from the login screen (self-registered accounts always come in
+        as PI, never Admin). Scoping someone to a campus and batch means their view (and their write access, enforced
+        by the server, not just hidden in the interface) is limited to just that batch.
       </p>
 
       <form onSubmit={createUser} className="mb-6 space-y-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">

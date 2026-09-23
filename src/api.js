@@ -49,6 +49,7 @@ async function request(path, options = {}) {
 
 export const api = {
   login: (email, password) => request("/api/auth/login", { method: "POST", body: JSON.stringify({ email, password }) }),
+  register: (data) => request("/api/auth/register", { method: "POST", body: JSON.stringify(data) }),
   me: () => request("/api/auth/me"),
 
   listUsers: () => request("/api/auth/users"),

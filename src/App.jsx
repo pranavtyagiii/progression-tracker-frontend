@@ -6,6 +6,7 @@ import {
 } from "./shared";
 
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
 import Dashboard from "./components/Dashboard";
@@ -19,11 +20,16 @@ import UserManagement from "./components/UserManagement";
 
 function AppShell() {
   const { user, loading: authLoading } = useAuth();
+  const [authView, setAuthView] = useState("login"); // "login" | "register"
 
   if (authLoading) {
     return <div className="flex h-full min-h-[500px] items-center justify-center bg-slate-50 text-sm text-slate-400">Loading…</div>;
   }
-  if (!user) return <Login />;
+  if (!user) {
+    return authView === "register"
+      ? <Register onSwitchToLogin={() => setAuthView("login")} />
+      : <Login onSwitchToRegister={() => setAuthView("register")} />;
+  }
   return <AppContent />;
 }
 
