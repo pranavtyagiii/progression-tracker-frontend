@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { LineChart, Line, BarChart, Bar, ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import {
-  NST_CAMPUS, CAMPUSES, batchesForCampus, CATEGORY_ORDER, QC_LABELS, QC_GOOD, QC_ALMOST, QC_PARTIAL, QC_LOW, QC_NO_PLAN,
+  NST_CAMPUS, CAMPUSES, batchesForCampus, CATEGORY_ORDER, QC_LABELS, QC_GOOD, QC_ALMOST, QC_PARTIAL, QC_LOW, QC_NO_PLAN, QC_META,
   fmtDate, fmtDateShort, WEEK1_START, buildWeeks, inWeek, computeFollowUpShifts,
   effortLevel, avgConfidence, overallRiskStatusFromConfidence, matrixCategory, scoreSessionQuality,
 } from "../shared";

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ChevronRight, Save, Search } from "lucide-react";
-import { effortLevel, useDraftAutosave, loadDraft, clearDraft, timeAgo } from "../shared";
+import { effortLevel, riskStatus, matrixCategory, RISK_RANK, useDraftAutosave, loadDraft, clearDraft, timeAgo } from "../shared";
 import { CategoryPill, Field, inputCls } from "../ui";
 import SessionAssistPanel from "./SessionAssistPanel";
 

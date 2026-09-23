@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CATEGORY_META, CATEGORY_ORDER } from "../shared";
 import { CategoryPill, Field, inputCls } from "../ui";
 
 function SettingsView({ settings, onSave }) {

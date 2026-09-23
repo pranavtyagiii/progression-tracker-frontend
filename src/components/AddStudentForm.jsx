@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, Save } from "lucide-react";
 import {
-  NST_CAMPUS, CAMPUSES, batchesForCampus, SESSION_TYPES, IN_OUT, COHORTS, STUDY_PATTERNS,
-  effortLevel, avgConfidence, overallRiskStatusFromConfidence, matrixCategory, scoreSessionQuality,
+  NST_CAMPUS, CAMPUSES, batchesForCampus, SESSION_TYPES, IN_OUT, COHORTS, STUDY_PATTERNS, OWNERSHIP_LEVELS, SUBJECTS,
+  effortLevel, avgConfidence, overallRiskStatusFromConfidence, matrixCategory, scoreSessionQuality, subjectRiskLabel,
   useDraftAutosave, loadDraft, clearDraft, timeAgo,
 } from "../shared";
 import { CategoryPill, QualityPill, Field, inputCls } from "../ui";

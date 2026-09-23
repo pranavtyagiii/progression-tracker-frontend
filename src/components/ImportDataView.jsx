@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Papa from "papaparse";
 import { Download, Upload, RotateCcw } from "lucide-react";
-import { NST_CAMPUS, CAMPUSES, batchesForCampus } from "../shared";
+import { NST_CAMPUS, CAMPUSES, batchesForCampus, SESSION_TYPES, IN_OUT, COHORTS, STUDY_PATTERNS, OWNERSHIP_LEVELS, riskStatus } from "../shared";
 import { StatCard, inputCls } from "../ui";
 
 const IMPORT_TEMPLATE_HEADERS = [
